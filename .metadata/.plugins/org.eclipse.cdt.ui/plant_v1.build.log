@@ -1,0 +1,20 @@
+11:17:46 **** Build of configuration Debug for project plant_v1 ****
+make -j7 all 
+arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32wle5jcix.d" -MT"Startup/startup_stm32wle5jcix.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Startup/startup_stm32wle5jcix.o" "../Startup/startup_stm32wle5jcix.s"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32WLSINGLE -DSTM32WL -DSTM32WLE5JCIx -DSTM32 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32WLSINGLE -DSTM32WL -DSTM32WLE5JCIx -DSTM32 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/syscalls.o"
+arm-none-eabi-gcc "../Src/sysmem.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32WLSINGLE -DSTM32WL -DSTM32WLE5JCIx -DSTM32 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/sysmem.o"
+arm-none-eabi-gcc -o "plant_v1.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/mac8/STM32IDE/plant_v1/STM32WLE5JCIX_FLASH.ld" --specs=nosys.specs -Wl,-Map="plant_v1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: plant_v1.elf
+ 
+arm-none-eabi-size  plant_v1.elf 
+arm-none-eabi-objdump -h -S plant_v1.elf  > "plant_v1.list"
+   text	   data	    bss	    dec	    hex	filename
+    572	      0	   1568	   2140	    85c	plant_v1.elf
+Finished building: default.size.stdout
+ 
+Finished building: plant_v1.list
+ 
+
+11:17:48 Build Finished. 0 errors, 0 warnings. (took 2s.303ms)
+
